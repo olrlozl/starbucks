@@ -1,28 +1,3 @@
-const searchEl = document.querySelector('.search');
-const searchInputEl = searchEl.querySelector('input');
-
-// search요소 누르면 input요소가 focus 되도록
-searchEl.addEventListener('click',function () {
-  searchInputEl.focus();
-});
-
-// input요소가 focus 되어있을때, 
-// search요소의 클래스 네임에 focused 추가,
-// input요소에 placeholder로 통합검색 문구 추가
-searchInputEl.addEventListener('focus', function () {
-  searchEl.classList.add('focused');
-  searchInputEl.setAttribute('placeholder','통합검색');
-})
-
-// input요소가 blur 되어있을때, 
-// search요소의 클래스 네임에 focused 제거,
-// input요소에 placeholder로 통합검색 문구 제거
-searchInputEl.addEventListener('blur', function () {
-  searchEl.classList.remove('focused');
-  searchInputEl.setAttribute('placeholder','');
-})
-
-
 // 1)우측 배지를, scroll 내리면 숨기고, 올리면 보이게 하기
 // 2)상단 이동하는 to-top 버튼을, scroll 내리면 보이고, 올리면 숨기기
 // lodash에서 제공하는 throttle이라는 기능 사용해서
@@ -172,8 +147,3 @@ spyEls.forEach(function (spyEl) {
 // Scene 메서드: ScrollMagic이라는 js라이브러리를 통해서, 특정한 요소를 감시하는 옵션을 지정
 // setClasstoggle 메서드: html의 클래스 속성을 무엇인가로 지정. 넣었다뺐다 제어해주는 역할.
 // addTo메서드: ScrollMagic이라는 js라이브러리가 필요한 Controller라는 개념의 내용을 추가하기 위해 사용
-
-
-// FOOTTER에서 올해의 년도 표기하기
-const thisYear = document.querySelector('.this-year');
-thisYear.textContent = new Date().getFullYear(); // 2023
